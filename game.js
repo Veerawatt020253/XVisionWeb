@@ -140,6 +140,7 @@ const wordElement = document.getElementById("word");
 const timerElement = document.getElementById("timer");
 const startButton = document.getElementById("startButton");
 const textButton = document.getElementById("textButton")
+const scorep  = document.getElementById("scorep");
 
 // ฟังก์ชันเริ่มต้นสำหรับ Speech Recognition
 function initSpeechRecognition() {
@@ -158,6 +159,7 @@ function initSpeechRecognition() {
         correctSound.play();
 
         score++;
+        scorep.textContent = "score : " + score
         resetTimer();
         selectNewWord();
       } else {
@@ -165,7 +167,7 @@ function initSpeechRecognition() {
           title: "พูดไม่ตรง",
           text: `คุณพูดว่า: "${spokenWord}" ลองอีกครั้ง`,
           icon: "error",
-          width: '100%'
+          width: '90%'
         });
       }
     };
@@ -182,7 +184,7 @@ function initSpeechRecognition() {
       title: "ไม่รองรับ",
       text: "เบราว์เซอร์ของคุณไม่รองรับ Speech Recognition",
       icon: "error",
-      width: '100%'
+      width: '90%'
     });
   }
 }
@@ -208,7 +210,7 @@ function startGame() {
   timeLeft = 15;
   timerElement.textContent = timeLeft;
   // startButton.disabled = true;
-  textButton.textContent = "หยุด"
+  textButton.textContent = "หยุดเล่น"
   startButton.classList.add("text-box-r")
   startButton.classList.remove("text-box-s")
   // textButton.className = ".text-c-r";
@@ -252,11 +254,13 @@ function endGame() {
   textButton.textContent = "เริ่มอีกครั้ง";
   startButton.classList.remove("text-box-r")
   startButton.classList.add("text-box-s")
+
+  scorep.textContent = "lastscore : " + score
   Swal.fire({
     title: "จบเกม!",
     text: `คะแนนที่คุณได้คือ: ${score}`,
     icon: "success",
-    width: '100%'
+    width: '90%'
   });
   startButton.disabled = false;
   wordElement.textContent = "สวัสดี"; // รีเซ็ตคำที่ต้องพูดเมื่อจบเกม
