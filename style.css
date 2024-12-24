@@ -47,11 +47,6 @@ button:disabled {
     background: #ccc;
     cursor: not-allowed;
 }
-.score {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #4CAF50;
-}
 .game-over {
     display: none;
     font-size: 2rem;
@@ -123,4 +118,8 @@ button:disabled {
     position: fixed;
     top: 50px;
     right: 50px;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #4CAF50;
+    text-align: right;
 }
