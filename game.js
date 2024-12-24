@@ -1,4 +1,4 @@
-const words = [
+const wordsold = [
   // ชุด 1
   "กระต่ายกระโดดข้ามรั้ว",
   "ปราสาทประดับเพชร",
@@ -88,6 +88,43 @@ const words = [
   "ประโยชน์ของการอ่านหนังสือ",
   "พระปรางค์สูงเสียดฟ้า",
 ];
+const words = [
+  // ชุด 1
+  "ดอกไม้บาน",
+  "พระอาทิตย์ตก",
+  "น้ำใสเย็น",
+  "หมาป่านอน",
+  "นกบินสูง",
+  "เด็กเล่นทราย",
+  "แมวขี้เซา",
+  "ฝนตกพรำ",
+  "ลมพัดเย็น",
+  "พระจันทร์สวย",
+
+  // ชุด 2
+  "ภูเขาสูง",
+  "ทะเลสีฟ้า",
+  "ผึ้งดูดน้ำหวาน",
+  "ปลาแหวกว่าย",
+  "ต้นไม้เขียว",
+  "กระต่ายน่ารัก",
+  "เสือคำราม",
+  "กวางกินหญ้า",
+  "แมวร้องเหมียว",
+  "หมีเดินช้า",
+
+  // ชุด 3
+  "นกแก้วพูดเก่ง",
+  "ดอกบัวงาม",
+  "เด็กวิ่งเร็ว",
+  "ม้าแข่งวิ่ง",
+  "เรือแล่นน้ำ",
+  "เมฆลอยต่ำ",
+  "ดาวเต็มฟ้า",
+  "แม่น้ำกว้าง",
+  "ลมหนาวเย็น",
+]
+
 
 let currentWord = "";
 let score = 0;
@@ -128,6 +165,7 @@ function initSpeechRecognition() {
           title: "พูดไม่ตรง",
           text: `คุณพูดว่า: "${spokenWord}" ลองอีกครั้ง`,
           icon: "error",
+          width: '100%'
         });
       }
     };
@@ -144,6 +182,7 @@ function initSpeechRecognition() {
       title: "ไม่รองรับ",
       text: "เบราว์เซอร์ของคุณไม่รองรับ Speech Recognition",
       icon: "error",
+      width: '100%'
     });
   }
 }
@@ -211,10 +250,13 @@ function endGame() {
     recognition.stop();
   }
   textButton.textContent = "เริ่มอีกครั้ง";
+  startButton.classList.remove("text-box-r")
+  startButton.classList.add("text-box-s")
   Swal.fire({
     title: "จบเกม!",
     text: `คะแนนที่คุณได้คือ: ${score}`,
     icon: "success",
+    width: '100%'
   });
   startButton.disabled = false;
   wordElement.textContent = "สวัสดี"; // รีเซ็ตคำที่ต้องพูดเมื่อจบเกม
