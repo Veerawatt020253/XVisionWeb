@@ -1,0 +1,120 @@
+body {
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 110dvh;
+    width: 101dvw;
+    overflow: hidden;
+    margin: 0;
+    background: #f0f2f5;
+    background-image: linear-gradient(#f0f2f5, #d87a59);
+}
+/* .container {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+} */
+.word {
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #2196F3;
+    min-height: 5rem;
+}
+.timer {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #f44336;
+}
+button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0.5rem;
+
+    font-family: Kanit;
+}
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+.score {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #4CAF50;
+}
+.game-over {
+    display: none;
+    font-size: 2rem;
+    color: #f44336;
+    margin: 1rem 0;
+}
+.text-box {
+    background-color: white;
+    padding: 15px 25px 15px 25px;
+    border-radius: 14px;
+    box-shadow: 0px 0px 3px  black;
+    color: black;
+}
+
+
+.text-box-s {
+    background-color: #198754;
+    padding: 15px 25px 15px 25px;
+    border-radius: 14px;
+    color: white;
+    border: none;
+}
+
+.text-box-r {
+    background-color: red;
+    padding: 15px 25px 15px 25px;
+    border-radius: 14px;
+    color: white;
+    border: none;
+}
+
+.text-box-s:hover{
+    background-color: #147045;
+}
+
+.text-box-s:disabled{    
+    background-color: #1b955c;
+    box-shadow: 0px 0px 3px  black;
+}
+
+.messge-text {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 2vh;
+}
+
+.fs-large{
+    font-size: 4vh;
+}
+
+.titlec{
+    position: fixed;
+    top: 50px;
+    width: 100%;
+}
+
+.charimg{
+    width: 26vh;
+}
+
+.bubbletext{
+    font-size: 2.5vh;
+    padding: 0;
+    margin: 0;
+}
